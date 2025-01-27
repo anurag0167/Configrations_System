@@ -1,0 +1,71 @@
+# Language server configuration for various languages
+
+use-grammars = { except = [ "wren", "gemini" ] }
+
+[language-server]
+clangd = { command = "clangd" }
+pyright = { command = "pyright-langserver", args = ["--stdio"], config = {pythonPath = "/home/algoneuron/AK/Python/.venv/bin/python"} }
+pylsp = { command = "pylsp" }
+ruff = { command = "ruff", args = ["server"] }
+
+[[language]]
+name = "c"
+scope = "source.c"
+injection-regex = "c"
+file-types = ["c"]  # TODO: ["h"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+
+# C++ language server configuration
+[language-server.cmake-language-server]
+command = "cmake-language-server"
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+injection-regex = "cpp"
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { glob = ".hpp.in" }, { glob = ".h.in" }]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+
+# TOML configuration
+[[language]]
+name = "toml"
+auto-format = true
+# Use Prettier plugin for formatting TOML files
+formatter = { command = "prettier", args = ["--parser", "toml"] }
+
+# JSON configuration
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+# Markdown configuration
+[[language]]
+name = "markdown"
+# Use mdformat for formatting Markdown files
+formatter = { command = "mdformat", args = ["-"] }
+
+# Python configuration
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "py(thon)?"
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt"]
+shebangs = ["python", "uv"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+comment-token = "#"
+language-servers = ["pyright", "pylsp"]
+indent = { tab-width = 4, unit = "    " }
+
+# Tree-sitter grammar for Python
+[[grammar]]
+name = "python"
+source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "4bfdd9033a2225cc95032ce77066b7aeca9e2efc" }
+
+
+

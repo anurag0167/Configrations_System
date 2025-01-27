@@ -15,6 +15,12 @@ element-icon {
 configuration {
     display-drun:    "";
     disable-history: false;
+    show-icons: true;
+}
+
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+element-icon { 
+ size: 3ch ; 
 }
 
 * {

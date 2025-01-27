@@ -4,15 +4,16 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# include $HOME/.config/sway/config.d/*
+
+### Variables
 # gaps 
 gaps inner 2px 
 gaps outer 2px
 
 # titlebar 
-default_border pixel 2
+default_border pixel 2px
 
-### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -21,31 +22,33 @@ set $down j
 set $up k
 set $right l
 
+
 # Your preferred terminal emulator
 # Recommends: foot
-set $term foot
+
+# Your preferred terminal emulator
+set $term alacritty
+# bindsym $mod+Return exec $term
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # Recommends: rofi-wayland
 set $rofi_cmd rofi \
         -terminal '$term'
+
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
-set $menu $firefox 
-
 # TODO: add window with the next release of rofi-wayland
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
 # output * bg /usr/share/backgrounds/default.png fill
-output * bg /home/ari/Downloads/1343746.png fill
+output * bg /home/algoneuron/Pictures/intense-network-thumb.jpg fill 
 
-#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -56,11 +59,13 @@ output * bg /home/ari/Downloads/1343746.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -76,12 +81,14 @@ output * bg /home/ari/Downloads/1343746.png fill
 #       middle_emulation enabled
 #   }
 
+# touchpad
 input "type:touchpad" {
 	tap enabled
 	dwt enabled 
 	natural_Scroll enabled
 	middle_emulation enabled
 }
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -99,8 +106,8 @@ input "type:touchpad" {
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Start Firefox 
-    bindsym $mod+f exec $firefox
+    # File manager
+    bindsym $mod+Shift+d exec thunar	
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -165,6 +172,7 @@ input "type:touchpad" {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    
 #
 # Layout stuff:
 #
@@ -180,7 +188,7 @@ input "type:touchpad" {
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+Shift+f fullscreen
+    bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -235,7 +243,7 @@ bindsym $mod+r mode "resize"
 # If multiple directories contain the files with the same name, the later
 # directory takes precedence; `$XDG_CONFIG_HOME/sway/config.d/20-swayidle.conf`
 # will always be loaded instead of `/usr/share/sway/config.d/20-swayidle.conf`
-# or `/etc/sway/config.d/20-swayidle.conf`
+# or `/etc/sway/config.d/20-swayidle.conf`CC
 #
 # This mechanism permits overriding our default configuration per-system
 # (/etc) or per-user ($XDG_CONFIG_HOME) basis. Just create the file you

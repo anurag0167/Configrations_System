@@ -1,0 +1,64 @@
+# Default colors
+# [colors.primary]
+# background = '#292C3E'
+# foreground = '#EBEBEB'
+#
+# # Cursor colors
+# [colors.cursor]
+# text = '#EBEBEB'
+# cursor = '#FF261E'
+#
+# # Normal colors
+# [colors.normal]
+# black   = '#0d0d0d'
+# red     = '#FF301B'
+# green   = '#A0E521'
+# yellow  = '#FFC620'
+# blue    = '#1BA6FA'
+# magenta = '#8763B8'
+# cyan    = '#21DEEF'
+# white   = '#EBEBEB'
+#
+# # Bright colors
+# [colors.bright]
+# black   = '#6D7070'
+# red     = '#FF4352'
+# green   = '#B8E466'
+# yellow  = '#FFD750'
+# blue    = '#1BA6FA'
+# magenta = '#A578EA'
+# cyan    = '#73FBF1'
+# white   = '#FEFEF8'
+
+# Default colors
+[colors.primary]
+background = '#1E1E2E'   # Soft dark background with a touch of blue
+foreground = '#F5F5F5'    # Light and neutral for foreground text
+
+# Cursor colors
+[colors.cursor]
+text = '#F5F5F5'         # Same as foreground for visibility
+cursor = '#9E62FF'       # Light purple for a glowing aura effect
+
+# Normal colors
+[colors.normal]
+black   = '#22223B'      # Deep indigo-black for a soft base
+red     = '#FF61A6'       # Soft pinkish red for a glowing effect
+green   = '#A7D8B8'       # Pastel minty green
+yellow  = '#F1C40F'       # Warm pastel yellow with a golden touch
+blue    = '#4D6BFF'       # Gentle, light blue
+magenta = '#9A68F7'       # Light violet for a luminous feel
+cyan    = '#6BFFFD'       # Light cyan for a fresh glow
+white   = '#E6E6E6'       # Soft off-white for readability
+
+# Bright colors
+[colors.bright]
+black   = '#9E9E9E'       # Lighter black with a cool tone
+red     = '#FF7D92'       # Brightened soft pinkish red
+green   = '#B2F2BB'       # Lighter pastel mint green
+yellow  = '#F0D60C'       # Warm but bright yellow with a soft touch
+blue    = '#6B8EFF'       # Lighter, dreamy blue
+magenta = '#D1A7FF'       # Soft pastel lavender
+cyan    = '#A0F6FB'       # Bright pastel cyan
+white   = '#FFFFFF'       # Pure white for light contrasts
+

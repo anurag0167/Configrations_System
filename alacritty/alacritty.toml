@@ -1,0 +1,11 @@
+[general]
+import = [
+	"argonaut.toml"
+]
+
+[font]
+size = 14
+# normal = { family = "JetBrainsMono NFM", style = "Regular" }
+normal = { family = 'MesloLGS NF', style = "Regular"} 
+offset.y = 2
+offset.x = 0
